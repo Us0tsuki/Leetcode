@@ -14,10 +14,10 @@ Input: 3
  Given n = 3, there are a total of 5 unique BST's:
 
       1         3     3      2      1  
-     \       /     /      / \      \  
-      3     2     1      1   3      2  
-     /     /       \                 \  
-    2     1         2                 3
+       \       /     /      / \      \  
+        3     2     1      1   3      2  
+       /     /       \                 \  
+      2     1         2                 3
 
 {% hint style="info" %}
 Every value from 1 to n can be the root, than values smaller than it goes to its left subtree and bigger goes to right subtree, this goes recursively to its subtrees.
@@ -31,7 +31,7 @@ The total number of BSTs should be SUM\(G\(0\) \* G\(n - 1\) + G\(1\) \* G\(n - 
 Thus this can be solved using DP, with base case G\(0\) = 1 \(null\). G\(1\) = 1\(single node as root\).
 {% endhint %}
 
-```text
+```java
 class Solution {
     public int numTrees(int n) {
         int[] dp = new int[n + 1];
