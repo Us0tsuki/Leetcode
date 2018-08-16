@@ -1,4 +1,4 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [96. Unique Binary Search Trees](README.md)
 
