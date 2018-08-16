@@ -2,22 +2,24 @@
 description: 'Medium - Dynamic Programming, Binary Search Tree, Tree'
 ---
 
-# 96. Unique Binary Search Trees
+# 96. Unique Binary Search Trees
 
 Given n, how many structurally unique BST's \(binary search trees\) that store values 1 ... n?
 
 Example:
 
 Input: 3  
- Output: 5  
- Explanation:  
- Given n = 3, there are a total of 5 unique BST's:
+Output: 5  
+Explanation:  
+Given n = 3, there are a total of 5 unique BST's:
 
-      1         3     3      2      1  
-       \       /     /      / \      \  
-        3     2     1      1   3      2  
-       /     /       \                 \  
-      2     1         2                 3
+```text
+  1         3     3      2      1  
+   \       /     /      / \      \  
+    3     2     1      1   3      2  
+   /     /       \                 \  
+  2     1         2                 3
+```
 
 {% hint style="info" %}
 Every value from 1 to n can be the root, than values smaller than it goes to its left subtree and bigger goes to right subtree, this goes recursively to its subtrees.
@@ -45,6 +47,5 @@ class Solution {
         return dp[n];
     }
 }
-
 ```
 
