@@ -1,0 +1,42 @@
+Iterative Method 
+
+Initialize three pointers prev as NULL, curr as head and next as NULL.
+Iterate through the linked list. In loop, do following. 
+// Before changing next of current, 
+// store next node 
+next = curr->next
+// Now change next of current 
+// This is where actual reversing happens 
+curr->next = prev 
+// Move prev and curr one step forward 
+prev = curr 
+curr = next
+
+Time Complexity: O(n) 
+Space Complexity: O(1)
+
+Recursive Method: 
+ 1) Divide the list in two parts - first node and rest of the linked list.
+ 2) Call reverse for the rest of the linked list.
+ 3) Link rest to first.
+ 4) Fix head pointer
+
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        if (head == null || head.next == null) {
+            return head; // BackTracking starts from the last node.
+        }
+        ListNode newHead = reverseList(head.next); // 1. Call reverse for the rest of the linked list.
+        head.next.next = head; // 2. The actual reverse action (The sequence matters since we should reverse the rest of the list before appending head at the end.)
+        head.next = null; // Avoid loop.
+        return newHead; // always return the head of the rest of the linkedlist
+    }
+}
+
+作者：LeetCode-Solution
+链接：https://leetcode-cn.com/problems/reverse-linked-list/solution/fan-zhuan-lian-biao-by-leetcode-solution-d1k2/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+Time Complexity: O(n) 
+Space Complexity: O(n)
+The call stack due to recursion is n.
